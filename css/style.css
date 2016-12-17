@@ -1129,6 +1129,15 @@ canvas {
   display: block;
 }
 
+.commonBackground {
+    background:linear-gradient(
+      hsl(0, 70%, 5%) 0%, 
+      hsl(0, 70%, 20%) 50%) !important;
+    padding-top:50px !important;
+    margin-top:50px !important;
+    border-top:50px !important;
+}
+
 .skyline {
   height: 100%;
   left: 0;
