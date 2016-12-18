@@ -36,10 +36,57 @@
 
 	</head>
 
+	<style>
+		ul {list-style-type: none;}
+
+		/* Weekdays (Mon-Sun) */
+		.weekdays {
+		    margin: 0;
+		    padding: 10px 0;
+		    background-color:#ddd;
+		}
+
+		.weekdays li {
+		    display: inline-block;
+		    width: 12%;
+		    color: #666;
+		    text-align: center;
+		}
+
+		.daySchedule {
+		    margin: 0;
+		    padding: 10px 0;
+		    background: #eee;
+		}
+
+		.daySchedule li {
+		    list-style-type: none;
+		    width: 12%;
+		    text-align: center;
+		    margin-bottom: 5px;
+		    font-size:12px;
+		    color:#777;
+		}
+
+
+		.dayGirls {
+		    margin: 0;
+		    padding: 10px 0;
+		    background: #eee;
+		}
+		.dayGirls li {
+		    list-style-type: none;
+		    display: inline-block;
+		    width: 12%;
+		    text-align: center;
+		    margin-bottom: 5px;
+		    font-size:12px;
+		    color:#777;
+		}
+	</style>
 
 	<body>
-		<div class = "container skyline" >
-
+		<div class="commonBackground">
 		<!-- wrapper -->
 		<div class="wrapper multipage">
 
@@ -61,7 +108,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					  </button>
-					  <a class="navbar-brand" href="#"><img src="images/Logomakr_13mFxx.png" alt="bootstrapwizard logo" /></a>
+					  <a class="navbar-brand" href="#"></a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -82,52 +129,96 @@
 			</div>
 			<!-- ./wrapper -->
 
+				
+			<div class="container">	
+
+				<div class="section-heading">
+					<h2>Schedule</h2>
+				</div>				
+				<ul class="weekdays">
+				  <li>Schedule</li>
+				  <li>Mo</li>
+				  <li>Tu</li>
+				  <li>We</li>
+				  <li>Th</li>
+				  <li>Fr</li>
+				  <li>Sa</li>
+				  <li>Su</li>
+				</ul>
+
+
+<!-- 				<ul class="daySchedule"> 
+				  <li>Morning</li>
+				</ul> -->
+
+
+				<ul class="dayGirls"> 
+				  <li>Morning</li>
+				  <li>Amy</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				</ul>
+
+				<ul class="dayGirls"> 
+				  <li> </li>
+				  <li>Amy</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				</ul>
+
+				<ul class="dayGirls"> 
+				  <li>Afternoon</li>
+				  <li>Amy</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				</ul>
+				<ul class="dayGirls"> 
+				  <li> </li>
+				  <li>Amy</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				</ul>
+
+				<ul class="dayGirls"> 
+				  <li>Evenning</li>
+				  <li>Amy</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				</ul>
+				<ul class="dayGirls"> 
+				  <li> </li>
+				  <li>Amy</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				  <li>Josh</li>
+				</ul>
 			</div>
-						
-		
 				
-			<!-- footer -->
-			<footer class="navbar-fixed-bottom">
-				<div class="container">
-					<div class="row">					
 
-						<div class="col-md-3 col-sm-3 wow fadeInUp showdelay2">
-							<p>Pages Links</p>
-							<ul class="arrow">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Schedule</a></li>
-								<li><a href="#">Studio</a></li>
-								<li><a href="#">Gallery</a></li>
-								<li><a href="#">Girls </a></li>
-							</ul>
-						</div> 
-						<div class="col-md-3 col-sm-3 wow fadeInUp showdelay2">
-						</div> 
-						<div class="col-md-3 col-sm-3 wow fadeInUp showdelay2">
-
-						</div> 
-						<!-- address -->
-						<div class="col-md-3 col-sm-3">
-							<div class="address  wow fadeInUp showdelay2">
-								<h3>Address</h3>
-								<ul class="unstyled">
-									<li><i class="fa fa-map-marker"></i>25th Street, Suite 2 New York NY 10887</li>
-									<li><i class="fa fa-envelope"></i>email@domain.com</li>
-									<li><i class="fa fa-phone"></i>+40 (0) 231 1234 567</li>
-									<li><i class="fa fa-fax"></i>+40 (0) 123 1234 568</li>
-								</ul>
-							</div>														
-						</div>
-						<!-- ./address --> 
-						
-						
-					</div>
-					<!-- ./row -->
-				</div>
-				
-			</footer>	
-			<!-- ./footer -->
-			
+		</div>	
 
 
 		<!-- jQuery  -->
@@ -159,7 +250,6 @@
 
   		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 		<script src='https://rawgithub.com/soulwire/sketch.js/master/js/sketch.min.js'></script>
-		<script type="text/javascript" src="js/skyline.js"></script>
 
 	</body>
 </html>
