@@ -494,6 +494,7 @@ ul.unstyled {
 	Team
 ====================================================*/
 .team-box {
+  margin: 10px;
 }
 .team-box .team-image img {
   width: 128px;
