@@ -435,8 +435,18 @@ ul.unstyled {
   letter-spacing: -1px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+.section-heading p {
+  font-size: 40px;
+  padding: 30px 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-family:"fantasy";
+  font-style: italic;
+  letter-spacing: -1px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
 .section-heading.dark {
-  color: #333;
+  color: #FFF;
   text-shadow: none;
 }
 @media (max-width: 767px) {
@@ -494,7 +504,7 @@ ul.unstyled {
 	Team
 ====================================================*/
 .team-box {
-  margin: 40px 0;
+  margin: 10px;
 }
 .team-box .team-image img {
   width: 128px;
