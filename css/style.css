@@ -341,11 +341,7 @@ ul.unstyled {
   background: #f6f6f6;
 }
 .multipage #slider {
-  background: url(../images/bg10.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+ 
 }
 .multipage #fullscreen-slider .slider-caption h2 {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) !important;
@@ -359,7 +355,7 @@ ul.unstyled {
 ====================================================*/
 #fullscreen-slider .slider-caption {
   text-align: center;
-  padding: 60px 140px 140px;
+  padding: 20px 140px 140px 100px;
 }
 #fullscreen-slider .slider-caption i {
   font-size: 130px;
@@ -1131,10 +1127,17 @@ canvas {
 }
 
 .skyline {
-  height: 100%;
+  height: 150%;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   background: url(http://jackrugile.com/images/misc/skyline-texture.png);
+}
+
+.studioImg {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
 }
