@@ -1132,7 +1132,7 @@ canvas {
   background: 
     linear-gradient(
       hsl(0, 70%, 5%) 0%, 
-      hsl(0, 70%, 20%) 50%)
+      hsl(345, 100%, 60%) 1%)
   ;
   display: block;
 }
@@ -1140,7 +1140,7 @@ canvas {
 .commonBackground {
     background:linear-gradient(
       hsl(0, 70%, 5%) 0%, 
-      hsl(0, 70%, 20%) 50%) !important;
+      hsl(345, 100%, 60%) 1%) !important;
     margin-top:72px !important;
 }
 
