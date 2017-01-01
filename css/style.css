@@ -707,6 +707,7 @@ ul.social-link.dark li a {
   color: #a1a1a1;
 }
 .footer p {
+  font-style:bold;
   color: #000000;
 }
 .footer h3 {
@@ -1161,8 +1162,8 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  width:1000px;
-  height:550px;
+  width:960px;
+  height:520px;
 
 }
 
