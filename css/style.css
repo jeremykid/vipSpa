@@ -122,7 +122,7 @@ ul.unstyled {
   font-weight: bold;
 }
 #bg_pattern {
-  background-image: url(../images/bg_pattern.png);
+  background-image: none !important;
   position: fixed;
   opacity: 0.8;
   left: 0px;
@@ -132,7 +132,7 @@ ul.unstyled {
   z-index: -1;
 }
 .bg-static {
-  background: url(../images/bg1.jpg) no-repeat center center fixed;
+  background: none !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
