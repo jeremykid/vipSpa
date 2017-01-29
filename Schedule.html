@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="Schedule" lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,14 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
+		<!-- Angular -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+		<!-- AngularFire -->
+		<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 	</head>
 
 	<style>
@@ -101,7 +108,7 @@
 		}
 	</style>
 
-	<body class="commonBackground">
+	<body ng-controller="ScheduleController" class="commonBackground">
 		<div style="height:110% !important;">
 		<!-- wrapper -->
 		<div class="wrapper multipage">
@@ -158,9 +165,16 @@
                 
 				<ul class="weekdays">
 				  <li> </li>
+<!-- 				  <li>{{currentWeeks[0]}}</li>
+				  <li>{{currentWeeks[1]}}</li>
+				  <li>{{currentWeeks[2]}}</li>
+				  <li>{{currentWeeks[3]}}</li>
+				  <li>{{currentWeeks[4]}}</li>
+				  <li>{{currentWeeks[5]}}</li>
+				  <li>{{currentWeeks[6]}}</li> -->
 				  <li>Mon</li>
 				  <li>Tue</li>
-				  <li>Wen</li>
+				  <li>Wed</li>
 				  <li>Thu</li>
 				  <li>Fri</li>
 				  <li>Sat</li>
@@ -171,89 +185,89 @@
 
 				<ul class="dayGirls"> 
 				  <li>9 a.m.-4 p.m.</li>
-				  <li><a href="girls/Scarlette.html">Scarlette</a></li>
-				  <li><a href="girls/Sterling.html">Sterling</a></li>
-				  <li><a href="girls/Scarlette.html">Scarlette</a></li>
-				  <li><a href="girls/Scarlette.html">Scarlette</a></li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
-				  <li><a href="girls/Sterling.html">Sterling</a></li>
-				  <li><a href="girls/Sterling.html">Sterling</a></li>
+				  <li><a href="girls/{{data.mon.am[0]}}.html">{{data.mon.am[0]}}</a></li>
+				  <li><a href="girls/{{data.tue.am[0]}}.html">{{data.tue.am[0]}}</a></li>
+				  <li><a href="girls/{{data.wed.am[0]}}.html">{{data.wed.am[0]}}</a></li>
+				  <li><a href="girls/{{data.thu.am[0]}}.html">{{data.thu.am[0]}}</a></li>
+				  <li><a href="girls/{{data.fri.am[0]}}.html">{{data.fri.am[0]}}</a></li>
+				  <li><a href="girls/{{data.sat.am[0]}}.html">{{data.sat.am[0]}}</a></li>
+				  <li><a href="girls/{{data.sun.am[0]}}.html">{{data.sun.am[0]}}</a></li>
 				</ul>
                 
 
 				<ul class="dayGirls"> 
 				  <li> </li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
-				  <li><a href="girls/Scarlette.html">Scarlette</a></li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
-				  <li><a href="girls/Mckayla.html">Mckayla</a></li>
-				  <li><a href="girls/Mckayla.html">Mckayla</a></li>
-				  <li><a href="girls/Taliah.html">Taliah</a></li>
-				  <li><a href="girls/Taliah.html">Taliah</a></li>
+				  <li><a href="girls/{{data.mon.am[1]}}.html">{{data.mon.am[1]}}</a></li>
+				  <li><a href="girls/{{data.tue.am[1]}}.html">{{data.tue.am[1]}}</a></li>
+				  <li><a href="girls/{{data.wed.am[1]}}.html">{{data.wed.am[1]}}</a></li>
+				  <li><a href="girls/{{data.thu.am[1]}}.html">{{data.thu.am[1]}}</a></li>
+				  <li><a href="girls/{{data.fri.am[1]}}.html">{{data.fri.am[1]}}</a></li>
+				  <li><a href="girls/{{data.sat.am[1]}}.html">{{data.sat.am[1]}}</a></li>
+				  <li><a href="girls/{{data.sun.am[1]}}.html">{{data.sun.am[1]}}</a></li>
 				</ul>
 
 				<ul class="dayGirls"> 
 				  <li></li>
-				  <li></li>
-				  <li><a href="girls/Mckayla.html">Mckayla</a></li>
-				  <li><a href="girls/Mckayla.html">Mckayla</a></li>
-				  <li><a href="girls/Sterling.html">Sterling</a></li>
-				  <li></li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
+				  <li><a href="girls/{{data.mon.am[2]}}.html">{{data.mon.am[2]}}</a></li>
+				  <li><a href="girls/{{data.tue.am[2]}}.html">{{data.tue.am[2]}}</a></li>
+				  <li><a href="girls/{{data.wed.am[2]}}.html">{{data.wed.am[2]}}</a></li>
+				  <li><a href="girls/{{data.thu.am[2]}}.html">{{data.thu.am[2]}}</a></li>
+				  <li><a href="girls/{{data.fri.am[2]}}.html">{{data.fri.am[2]}}</a></li>
+				  <li><a href="girls/{{data.sat.am[2]}}.html">{{data.sat.am[2]}}</a></li>
+				  <li><a href="girls/{{data.sun.am[2]}}.html">{{data.sun.am[2]}}</a></li>
 				</ul>
 				<ul class="dayGirls"> 
 				  <li> </li>
-				  <li></li>
-				  <li></li>
-				  <li> </li>
-				  <li></li>
-				  <li> </li>
-				  <li></li>
-				  <li></li>
+				  <li><a href="girls/{{data.mon.am[3]}}.html">{{data.mon.am[3]}}</a></li>
+				  <li><a href="girls/{{data.tue.am[3]}}.html">{{data.tue.am[3]}}</a></li>
+				  <li><a href="girls/{{data.wed.am[3]}}.html">{{data.wed.am[3]}}</a></li>
+				  <li><a href="girls/{{data.thu.am[3]}}.html">{{data.thu.am[3]}}</a></li>
+				  <li><a href="girls/{{data.fri.am[3]}}.html">{{data.fri.am[3]}}</a></li>
+				  <li><a href="girls/{{data.sat.am[3]}}.html">{{data.sat.am[3]}}</a></li>
+				  <li><a href="girls/{{data.sun.am[3]}}.html">{{data.sun.am[3]}}</a></li>
 				</ul>
                 
                 <div style="height:2px !important;background-color:lightgray !important;"></div>
 
 				<ul class="dayGirls"> 
 				  <li>4 p.m.-11 p.m.</li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
-				  <li><a href="girls/Sterling.html">Sterling</a></li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
-				  <li><a href="girls/Sterling.html">Sterling</a></li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
-				  <li><a href="girls/Sterling.html">Sterling</a></li>
+				  <li><a href="girls/{{data.mon.pm[0]}}.html">{{data.mon.pm[0]}}</a></li>
+				  <li><a href="girls/{{data.tue.pm[0]}}.html">{{data.tue.pm[0]}}</a></li>
+				  <li><a href="girls/{{data.wed.pm[0]}}.html">{{data.wed.pm[0]}}</a></li>
+				  <li><a href="girls/{{data.thu.pm[0]}}.html">{{data.thu.pm[0]}}</a></li>
+				  <li><a href="girls/{{data.fri.pm[0]}}.html">{{data.fri.pm[0]}}</a></li>
+				  <li><a href="girls/{{data.sat.pm[0]}}.html">{{data.sat.pm[0]}}</a></li>
+				  <li><a href="girls/{{data.sun.pm[0]}}.html">{{data.sun.pm[0]}}</a></li>
 				</ul>
 				<ul class="dayGirls"> 
 				  <li> </li>
-				  <li><a href="girls/Scarlette.html">Scarlette</a></li>
-				  <li><a href="girls/Scarlette.html">Scarlette</a></li>
-				  <li><a href="girls/Scarlette.html">Scarlette</a></li>
-				  <li><a href="girls/Scarlette.html">Scarlette</a></li>
-				  <li><a href="girls/Scarlette.html">Scarlette</a></li>
-				  <li></li>
-				  <li><a href="girls/Cherry.html">Cherry</a></li>
+				  <li><a href="girls/{{data.mon.pm[1]}}.html">{{data.mon.pm[1]}}</a></li>
+				  <li><a href="girls/{{data.tue.pm[1]}}.html">{{data.tue.pm[1]}}</a></li>
+				  <li><a href="girls/{{data.wed.pm[1]}}.html">{{data.wed.pm[1]}}</a></li>
+				  <li><a href="girls/{{data.thu.pm[1]}}.html">{{data.thu.pm[1]}}</a></li>
+				  <li><a href="girls/{{data.fri.pm[1]}}.html">{{data.fri.pm[1]}}</a></li>
+				  <li><a href="girls/{{data.sat.pm[1]}}.html">{{data.sat.pm[1]}}</a></li>
+				  <li><a href="girls/{{data.sun.pm[1]}}.html">{{data.sun.pm[1]}}</a></li>
 				</ul>
 				<ul class="dayGirls"> 
 				  <li> </li>
-				  <li></li>
-				  <li></li>
-				  <li><a href="girls/Taliah.html">Taliah</a></li>
-				  <li></li>
-				  <li><a href="girls/Taliah.html">Taliah</a></li>
-				  <li></li>
-				  <li></li>
+				  <li><a href="girls/{{data.mon.pm[2]}}.html">{{data.mon.pm[2]}}</a></li>
+				  <li><a href="girls/{{data.tue.pm[2]}}.html">{{data.tue.pm[2]}}</a></li>
+				  <li><a href="girls/{{data.wed.pm[2]}}.html">{{data.wed.pm[2]}}</a></li>
+				  <li><a href="girls/{{data.thu.pm[2]}}.html">{{data.thu.pm[2]}}</a></li>
+				  <li><a href="girls/{{data.fri.pm[2]}}.html">{{data.fri.pm[2]}}</a></li>
+				  <li><a href="girls/{{data.sat.pm[2]}}.html">{{data.sat.pm[2]}}</a></li>
+				  <li><a href="girls/{{data.sun.pm[2]}}.html">{{data.sun.pm[2]}}</a></li>
 				</ul>
 				<ul class="dayGirls"> 
 				  <li> </li>
-				  <li></li>
-				  <li></li>
-				  <li></li>
-				  <li></li>
-                  <li></li>
-				  <li></li>
-				  <li></li>
+				  <li><a href="girls/{{data.mon.pm[3]}}.html">{{data.mon.pm[3]}}</a></li>
+				  <li><a href="girls/{{data.tue.pm[3]}}.html">{{data.tue.pm[3]}}</a></li>
+				  <li><a href="girls/{{data.wed.pm[3]}}.html">{{data.wed.pm[3]}}</a></li>
+				  <li><a href="girls/{{data.thu.pm[3]}}.html">{{data.thu.pm[3]}}</a></li>
+				  <li><a href="girls/{{data.fri.pm[3]}}.html">{{data.fri.pm[3]}}</a></li>
+				  <li><a href="girls/{{data.sat.pm[3]}}.html">{{data.sat.pm[3]}}</a></li>
+				  <li><a href="girls/{{data.sun.pm[3]}}.html">{{data.sun.pm[3]}}</a></li>
 				</ul>
                 
                 <ul class="byAppointment">
@@ -279,7 +293,17 @@
 			</footer>
 
 		</div>	
+		<script>
+		  // Initialize the Firebase SDK
 
+		var config = {
+		    authDomain: "vipspa-4c43f.firebaseapp.com",
+		    databaseURL: "https://vipspa-4c43f.firebaseio.com",
+		};
+
+		firebase.initializeApp(config);
+
+		</script>
 
 		<!-- jQuery  -->
 		<script src="js/jquery.js"></script>
@@ -307,6 +331,10 @@
 		<script src="js/jqbootstrapvalidation/jqBootstrapValidation.js"></script>		
 		<!-- main -->
 		<script src="js/main.js"></script>
+
+
+		<script src="js/angularSchedule.js"></script>
+
 
   		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 		<script src='https://rawgithub.com/soulwire/sketch.js/master/js/sketch.min.js'></script>
