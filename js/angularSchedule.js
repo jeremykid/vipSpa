@@ -4,31 +4,27 @@ var app = angular.module("Schedule", ["firebase"]);
 app.controller("ScheduleController", function($scope, $firebaseObject) {
 
     var weekDays = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat']; 
-    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    // var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 	$scope.currentTime = new Date();
-    var array1 = weekDays.slice($scope.currentTime.getDay(),7) 
-    var array2 = weekDays.slice(0,$scope.currentTime.getDay());
-    Array.prototype.push.apply(array1, array2);
-    $scope.currentWeeks = array1;
-    $scope.currentMonth = months[$scope.currentTime.getMonth()];
-    $scope.currentDay = $scope.currentTime.getDate();
 
-    console.log($scope.currentWeeks);
-    console.log($scope.currentMonth);
-    console.log($scope.currentDay);
+	var firstday = new Date();
+	firstday.setDate($scope.currentTime.getDate() - ($scope.currentTime.getDay() + 1));
+
+    $scope.weekDays = [];
+    for (var i=0;i<7;i++){
+    	firstday.setDate(firstday.getDate() + 1);
+    	var dateString = months[firstday.getMonth()] + " " + firstday.getDate();
+    	$scope.weekDays.push(dateString);
+    }
 
     var ref = firebase.database().ref().child("data");
 	var syncObject = $firebaseObject(ref);
 
 	firebase.database().ref('/weekschedule/').once('value').then(function(snapshot) {
-        var data = snapshot.val();
-
-        var list = [];
-
-       	
+        var data = snapshot.val();       	
         $scope.data = data;
-        console.log($scope.data.mon.am[0]);
     });
 
 });
