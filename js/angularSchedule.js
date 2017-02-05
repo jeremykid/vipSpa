@@ -10,8 +10,11 @@ app.controller("ScheduleController", function($scope, $firebaseObject) {
 	$scope.currentTime = new Date();
 
 	var firstday = new Date();
-	firstday.setDate($scope.currentTime.getDate() - ($scope.currentTime.getDay() + 1));
-
+    if (firstday.getDay() != 0){
+	   firstday.setDate($scope.currentTime.getDate() - ($scope.currentTime.getDay()  ));
+    }else{
+       firstday.setDate($scope.currentTime.getDate() - ($scope.currentTime.getDay() + 7 ));
+    }
     $scope.weekDays = [];
     for (var i=0;i<7;i++){
     	firstday.setDate(firstday.getDate() + 1);
@@ -25,7 +28,6 @@ app.controller("ScheduleController", function($scope, $firebaseObject) {
 	firebase.database().ref('/weekschedule/').once('value').then(function(snapshot) {
         var data = snapshot.val();    
         $scope.data = data;
-        console.log(data[0].am[0])
 
     });
 
