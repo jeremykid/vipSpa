@@ -28,6 +28,7 @@ app.controller("ScheduleController", function($scope, $firebaseObject) {
 	var syncObject = $firebaseObject(ref);
 
 	firebase.database().ref('/weekschedule/').once('value').then(function(snapshot) {
+        console.log(snapshot.val());
         var data = snapshot.val();    
         $scope.data = data;
 
