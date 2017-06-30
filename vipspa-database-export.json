@@ -1,27 +1,27 @@
 {
   "weekschedule" : [ {
     "am" : [ "am0", "am1", "am2", "am3", "am4", "am5", "am6" ],
-    "pm" : [ "pm1", "pm1", "pm2", "pm3" ]
+    "pm" : [ "pm1", "pm1", "pm2", "pm3", "pm4", "pm5" ]
   }, {
     "am" : [ "am0", "am1", "am2", "am3", "am4", "am5", "am6" ],
-    "pm" : [ "pm1", "pm1", "pm2", "pm3" ]
+    "pm" : [ "pm1", "pm1", "pm2", "pm3", "pm4", "pm5" ]
   }, {
     "am" : [ "am0", "am1", "am2", "am3", "am4", "am5", "am6" ],
-    "pm" : [ "pm1", "pm1", "pm2", "pm3" ]
+    "pm" : [ "pm1", "pm1", "pm2", "pm3", "pm4", "pm5" ]
   }, {
     "am" : [ "am0", "am1", "am2", "am3", "am4", "am5", "am6" ],
-    "pm" : [ "pm1", "pm1", "pm2", "pm3" ]
+    "pm" : [ "pm1", "pm1", "pm2", "pm3", "pm4", "pm5" ]
   }, {
     "am" : [ "am0", "am1", "am2", "am3", "am4", "am5", "am6" ],
-    "pm" : [ "pm1", "pm1", "pm2", "pm3" ]
+    "pm" : [ "pm1", "pm1", "pm2", "pm3", "pm4", "pm5" ]
   }, {
     "am" : [ "am0", "am1", "am2", "am3", "am4", "am5", "am6" ],
-    "pm" : [ "pm1", "pm1", "pm2", "pm3" ]
+    "pm" : [ "pm1", "pm1", "pm2", "pm3", "pm4", "pm5" ]
   }, {
     "am" : [ "am0", "am1", "am2", "am3", "am4", "am5", "am6" ],
-    "pm" : [ "pm1", "pm1", "pm2", "pm3" ]
+    "pm" : [ "pm1", "pm1", "pm2", "pm3", "pm4", "pm5" ]
   }, {
     "am" : [ "am0", "am1", "am2", "am3", "am4", "am5", "am6" ],
-    "pm" : [ "pm1", "pm1", "pm2", "pm3" ]
+    "pm" : [ "pm1", "pm1", "pm2", "pm3", "pm4", "pm5" ]
   } ]
 }
